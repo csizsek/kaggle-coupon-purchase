@@ -185,7 +185,7 @@ def recommended_coupons(uh):
     return " ".join(cs.COUPON_ID_hash[:3].tolist())
 
 s = pd.read_csv('data/sample_submission.csv')
-#s = s[:201]
+s = s[:201]
 s.PURCHASED_COUPONS = s.USER_ID_hash.apply(lambda uh: recommended_coupons(uh))
 
 s.to_csv(sub_file_name, index=False)
