@@ -117,8 +117,8 @@ while (i2 < imax) {  # this loop takes a few minutes
 # Weight matrix with 7 factors, separate for male and female users 
 #Weight Matrix: GENRE_NAME, DISCOUNT_PRICE, DISPPERIOD, large_area_name, small_area_name, VALIDPERIOD, USABLE_DATE_sum
 require(Matrix)
-weightm <- c(1.962, 1.25, 1.25, 1.00, 8.50, 0.625, 0.4) # males weights
-weightf <- c(1.75, 0.75, 1.50, 1.00, 8.50, 0.625, 0.25) # female weights
+weightm <- c(1.962, 1.25, 1.22, 1.00, 8.50, 0.625, 0.4) # males weights
+weightf <- c(1.75, 0.75, 1.42, 1.00, 8.50, 0.625, 0.25) # female weights
 Wm <- as.matrix(Diagonal(x=c(rep(weightm[1],13), rep(weightm[2],1), rep(weightm[3],1), rep(weightm[4],9), 
                              rep(weightm[5],55),rep(weightm[6],2),rep(weightm[7],1))))
 Wf <- as.matrix(Diagonal(x=c(rep(weightf[1],13), rep(weightf[2],1), rep(weightf[3],1), rep(weightf[4],9), 
