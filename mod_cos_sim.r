@@ -109,7 +109,7 @@ while (i2 < imax) {  # this loop takes a few minutes
                                                  contrasts.arg=lapply(trainv[,names(which(sapply(trainv[,-c(1,2)], is.factor)==TRUE))], 
                                                                       contrasts, contrasts=FALSE)))
     # discount coupon visits relative to coupon purchases
-    couponVisitFactor <- .0077      
+    couponVisitFactor <- .0157      
     trainv[,3:dim(trainv)[2]] <- trainv[,3:dim(trainv)[2]] * couponVisitFactor  
     uchar <- aggregate(.~USER_ID_hash, data=rbind(uchar,trainv[,-1]),FUN=sum)    
 }
